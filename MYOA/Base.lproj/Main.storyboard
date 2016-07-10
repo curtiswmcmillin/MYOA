@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="l3i-3H-N4K">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -19,12 +20,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0X-Iv-8NX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-285" y="494"/>
+            <point key="canvasLocation" x="-362" y="465"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MPa-nU-vvE">
             <objects>
-                <viewController id="g6T-qx-aYs" sceneMemberID="viewController">
+                <viewController id="g6T-qx-aYs" customClass="MYOAViewController" customModule="MYOA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WRZ-mh-pRG"/>
                         <viewControllerLayoutGuide type="bottom" id="f3A-Ye-sad"/>
@@ -33,28 +34,120 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDh-VS-0Dh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDh-VS-0Dh">
                                 <rect key="frame" x="0.0" y="487" width="600" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Stalk to the door, peak down the hallway."/>
+                                <connections>
+                                    <segue destination="gQ1-Yd-mNr" kind="show" id="O1a-fD-i3O"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yp-Ev-h2b">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yp-Ev-h2b">
                                 <rect key="frame" x="0.0" y="378" width="600" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Leap through the door and roar!"/>
+                                <connections>
+                                    <segue destination="58H-hk-ZUW" kind="show" id="zU8-Qz-wr7"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sample text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VBJ-4u-rhg">
-                                <rect key="frame" x="20" y="78" width="560" height="219"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VBJ-4u-rhg">
+                                <rect key="frame" x="57" y="78" width="487" height="219"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">An immense tiger wakes in an empty room.
+
+A door opens into a hallway . . .
+
+What should she do?</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5yp-Ev-h2b" firstAttribute="trailing" secondItem="yDh-VS-0Dh" secondAttribute="trailing" id="841-WS-R0P"/>
+                            <constraint firstItem="yDh-VS-0Dh" firstAttribute="top" secondItem="5yp-Ev-h2b" secondAttribute="bottom" constant="79" id="B4Y-rt-InV"/>
+                            <constraint firstAttribute="trailing" secondItem="5yp-Ev-h2b" secondAttribute="trailing" id="FMz-GA-qwe"/>
+                            <constraint firstItem="VBJ-4u-rhg" firstAttribute="top" secondItem="WRZ-mh-pRG" secondAttribute="bottom" constant="14" id="KgY-K6-Ehx"/>
+                            <constraint firstItem="5yp-Ev-h2b" firstAttribute="leading" secondItem="yDh-VS-0Dh" secondAttribute="leading" id="Y6t-ah-ebI"/>
+                            <constraint firstItem="5yp-Ev-h2b" firstAttribute="top" secondItem="VBJ-4u-rhg" secondAttribute="bottom" constant="81" id="alG-FI-fae"/>
+                            <constraint firstItem="f3A-Ye-sad" firstAttribute="top" secondItem="yDh-VS-0Dh" secondAttribute="bottom" constant="83" id="bkN-nE-pZw"/>
+                            <constraint firstItem="5yp-Ev-h2b" firstAttribute="leading" secondItem="a53-KI-kjK" secondAttribute="leading" id="kjJ-q3-tew"/>
+                            <constraint firstItem="VBJ-4u-rhg" firstAttribute="centerX" secondItem="5yp-Ev-h2b" secondAttribute="centerX" id="sh6-gp-sbO"/>
+                            <constraint firstItem="VBJ-4u-rhg" firstAttribute="leading" secondItem="a53-KI-kjK" secondAttribute="leadingMargin" constant="37" id="xoU-h3-NSb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sxf-4a-516"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efg-8j-h1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="284" y="479"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tWs-SZ-Sbp">
+            <objects>
+                <viewController id="58H-hk-ZUW" customClass="MYOAViewController" customModule="MYOA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1i4-qG-mf5"/>
+                        <viewControllerLayoutGuide type="bottom" id="3O7-9c-drA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XPJ-db-Qbc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Excellent idea, that scared away the hunter!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DKJ-vU-McE">
+                                <rect key="frame" x="57" y="78" width="487" height="219"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DKJ-vU-McE" firstAttribute="leading" secondItem="XPJ-db-Qbc" secondAttribute="leadingMargin" constant="37" id="8gh-u1-vqx"/>
+                            <constraint firstItem="DKJ-vU-McE" firstAttribute="top" secondItem="1i4-qG-mf5" secondAttribute="bottom" constant="14" id="9wz-kv-QNY"/>
+                            <constraint firstItem="3O7-9c-drA" firstAttribute="top" secondItem="DKJ-vU-McE" secondAttribute="bottom" constant="303" id="Iwm-xb-dll"/>
+                            <constraint firstItem="DKJ-vU-McE" firstAttribute="centerX" secondItem="XPJ-db-Qbc" secondAttribute="centerX" id="RV1-IW-6HP"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="sxf-4a-516"/>
+                    <navigationItem key="navigationItem" id="AqS-Wc-A7c"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="efg-8j-h1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ulh-9g-P2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="457" y="494"/>
+            <point key="canvasLocation" x="-178" y="393"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mrS-wB-KPu">
+            <objects>
+                <viewController id="gQ1-Yd-mNr" customClass="MYOAViewController" customModule="MYOA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5hi-fp-LjM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lin-Pb-xQI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZlL-o2-oLx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eRP-L8-GKe">
+                                <rect key="frame" x="57" y="78" width="487" height="219"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Good idea, safety first.  
+
+She eyes a hunter.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eRP-L8-GKe" firstAttribute="top" secondItem="5hi-fp-LjM" secondAttribute="bottom" constant="14" id="SaY-2U-k4S"/>
+                            <constraint firstItem="eRP-L8-GKe" firstAttribute="centerX" secondItem="ZlL-o2-oLx" secondAttribute="centerX" id="abj-et-vWi"/>
+                            <constraint firstItem="Lin-Pb-xQI" firstAttribute="top" secondItem="eRP-L8-GKe" secondAttribute="bottom" constant="303" id="v79-o0-8CB"/>
+                            <constraint firstItem="eRP-L8-GKe" firstAttribute="leading" secondItem="ZlL-o2-oLx" secondAttribute="leadingMargin" constant="37" id="w6i-aV-yNb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gG5-t9-ZCF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yx0-L0-sl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-400" y="853"/>
         </scene>
     </scenes>
 </document>
